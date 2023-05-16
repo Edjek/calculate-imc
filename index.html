@@ -10,22 +10,24 @@
         <script src="public/js/app.js" defer></script>
     </head>
     <body>
-        <div>
-            <h1>Calcul de votre imc</h1>
-            <p>IMC = poids (kg) / (Taille (m)²)</p>
-            <form action="">
-                <div>
-                    <label for="">Taille</label>
-                    <input type="text" />
-                </div>
-                <div>
-                    <label for="">Taille</label>
-                    <input type="text" />
-                </div>
-                <input type="submit" value="Calculer">
-            </form>
+        <div class="container">
+            <div class="form-wrapper">
+                <h1>Calcul de votre imc</h1>
+                <p>IMC = poids (kg) / (Taille (m)²)</p>
+                <form id="form-imc" action="" name="formImc">
+                    <div class="mb">
+                        <label for="size">Taille en cm</label>
+                        <input type="text" name="size" id="size" placeholder="exemple: 175" required autofocus/>
+                    </div>
+                    <div class="mb">
+                        <label for="weight">Poids</label>
+                        <input type="text" id="weight" placeholder="poids en kg" required/>
+                    </div>
+                    <input type="submit" value="Calculer" id="submit">
+                </form>
+            </div>
 
-            <div>
+            <div class="info-wrapper">
                 <table>
                     <caption>interprétation de l'indice de masse corporelle (imc)</caption>
                     <tr>
