@@ -9,6 +9,7 @@ formImc.addEventListener('submit', function (e) {
     if (message) {
         removeElement(message)
     }
+
     if (isValidate(size, weight)) {
         const result = calculateImc(weight, size)
         createElement('div', 'message', `Votre imc est de ${result}`, formImc, 'beforeend')
@@ -16,6 +17,10 @@ formImc.addEventListener('submit', function (e) {
         createElement('div', 'message', `Veuillez entrer des valeurs valides`, formImc, 'beforeend')
     }
 })
+
+function isValidate(size, weight) {
+    return /^[0-9]{2,3}$/.test(size) && /^[0-9]{2,3}$/.test(weight)
+}
 
 function calculateImc(weight, size) {
     const result = weight / Math.pow(size / 100, 2)
@@ -31,8 +36,4 @@ function createElement(elem, className, text, elemParent, position) {
 
 function removeElement(elem) {
     elem.remove()
-}
-
-function isValidate(size, weight) {
-    return /^[0-9]{2,3}$/.test(size) && /^[0-9]{2,3}$/.test(weight)
 }
